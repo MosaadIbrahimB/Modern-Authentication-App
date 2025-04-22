@@ -1,8 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:modern_authentication_app/core/widget/logo_widget.dart';
-import 'package:modern_authentication_app/utils/app_color.dart';
+import 'dart:developer';
 
+import 'package:flutter/material.dart';
+import 'package:modern_authentication_app/core/widget/logo_widget.dart';
+
+import '../../../core/utils/app_color.dart';
+import '../../../core/utils/app_text_style.dart';
+import '../../../core/widget/button_widget.dart';
+import '../widget/box_Top_login_screen_widget.dart';
 import '../widget/password_text_form_field_widget.dart';
 import '../widget/text_form_field_widget.dart';
 
@@ -15,16 +19,7 @@ class LoginScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stack(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: SvgPicture.asset("assets/images/box_gray.svg"),
-                ),
-
-                SvgPicture.asset("assets/images/box_blue.svg"),
-              ],
-            ),
+            BoxTopLoginScreenWidget(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
               child: Column(
@@ -62,33 +57,36 @@ class LoginScreen extends StatelessWidget {
                     labelText: "Password",
                   ),
                   SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Forgot Password ?",
-                        style: AppTextStyle.roboto14BlackW700
-                      ),
-                    ],
+                  ForgotPasswordWidget(),
+                  SizedBox(height: 30),
+                  ButtonWidget(),
+                  //--------------- Footer ----------------
+                  SizedBox(height: 20),
+                  Text(
+                    "Or sign up using ",
+                    style: AppTextStyle.helvetica15BlackW400,
                   ),
+                  SizedBox(height: 20),
+                  SocialLoginWidget(),
                   SizedBox(height: 30),
 
-                  ButtonWidget(),
-                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "Don't have an account?",
-                        style: AppTextStyle.roboto14BlackW700
+                        style: AppTextStyle.roboto14BlackW700.copyWith(
+                          color: Colors.black54,
+                          fontSize: 16
+                        ),
                       ),
                       SizedBox(width: 5),
                       Text(
                         "Sign up",
                         style: AppTextStyle.roboto14BlackW700.copyWith(
-                          color: AppColor.primary,
-                          fontWeight: FontWeight.w700,
-                        ),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold
+                        )
                       ),
                     ],
                   ),
@@ -102,61 +100,49 @@ class LoginScreen extends StatelessWidget {
   }
 }
 
-class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({
+class SocialLoginWidget extends StatelessWidget {
+  const SocialLoginWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: (){},
-      child: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              spreadRadius: 1,
-              blurRadius: 5,
-              offset: Offset(0, 5), // اتجاه الظل
-            ),
-          ],
-          borderRadius: BorderRadius.circular(5),
-          color: Colors.blue,
-          gradient: LinearGradient(colors: [
-            AppColor.primary,
-            AppColor.secondary
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-      
-          ),
-      
-        ),
-        width: 199,
-        height: 53,
-        child: Text("LOG IN",
-          style: AppTextStyle.roboto16WhiteW700,
-      
-        ),
-      
+    return SizedBox(
+      height: 40,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 25,
+              child: Image.asset("assets/images/face.png")),
+          SizedBox(width: 10),
+          CircleAvatar(
+              radius: 25,child: Image.asset("assets/images/google.png")),
+          SizedBox(width: 10),
+          CircleAvatar(
+              radius: 25,child: Image.asset("assets/images/mac.png")),
+        ],
       ),
     );
   }
 }
 
-class AppTextStyle {
-  static TextStyle roboto14BlackW700 = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w700,
-    color: Color(0xff515151),
-    fontFamily: "Roboto",
-  );
-  static TextStyle roboto16WhiteW700 = TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w700,
-    color: Colors.white,
-    fontFamily: "Roboto",
-  );
+class ForgotPasswordWidget extends StatelessWidget {
+  const ForgotPasswordWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        log("Forgot Password");
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text("Forgot Password ?", style: AppTextStyle.roboto14BlackW700),
+        ],
+      ),
+    );
+  }
 }

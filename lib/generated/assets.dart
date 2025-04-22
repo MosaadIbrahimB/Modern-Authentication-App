@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String fontsHelvetica = 'assets/fonts/Helvetica.ttf';
   static const String fontsInter18ptBold = 'assets/fonts/Inter_18pt-Bold.ttf';
   static const String fontsInter18ptRegular = 'assets/fonts/Inter_18pt-Regular.ttf';
   static const String fontsPrimeLight = 'assets/fonts/Prime-Light.otf';
@@ -11,6 +12,9 @@ class Assets {
   static const String imagesBackgroundSplash = 'assets/images/background_splash.png';
   static const String imagesBoxBlue = 'assets/images/box_blue.svg';
   static const String imagesBoxGray = 'assets/images/box_gray.svg';
+  static const String imagesFace = 'assets/images/face.png';
+  static const String imagesGoogle = 'assets/images/google.png';
   static const String imagesLogoImage = 'assets/images/logo_image.png';
+  static const String imagesMac = 'assets/images/mac.png';
 
 }

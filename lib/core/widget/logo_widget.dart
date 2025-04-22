@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:modern_authentication_app/utils/app_color.dart';
+
+import '../utils/app_color.dart';
 
 class LogoWidget extends StatelessWidget {
   const LogoWidget({

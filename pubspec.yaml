@@ -40,3 +40,7 @@ flutter:
          weight: 400
        - asset: assets/fonts/Roboto_Condensed-Bold.ttf
          weight: 700
+
+   - family: Helvetica
+     fonts:
+       - asset: assets/fonts/Helvetica.ttf

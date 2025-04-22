@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modern_authentication_app/feature/auth/screen/login_screen.dart';
 import 'package:modern_authentication_app/feature/splash/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Modern Authentication',
-      home: SplashScreen(),
+      home: LoginScreen(),
     );
   }
 }
