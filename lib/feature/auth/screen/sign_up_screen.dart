@@ -1,33 +1,37 @@
 import 'package:flutter/material.dart';
-import '../widget/body_widget.dart';
-import '../widget/box_Top_login_screen_widget.dart';
-import '../widget/footer_widget.dart';
+import '../widget/body_sign_widget.dart';
+import '../widget/do_not_have_acc_widget.dart';
 import '../widget/header_widget.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         physics: NeverScrollableScrollPhysics(),
         child: Column(
           children: [
-            BoxTopLoginScreenWidget(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35.0),
               child: Column(
                 children: [
                   //--------------- Header ----------------
                   HeaderWidget(
-                    title: "Welcome back!",
-                    subTitle: "Log in to existing LOGO account",
+                    isLogin: false,
+                    title: "Let’s Get Started!",
+                    subTitle: "Create an account on MNZL to get all features",
                   ),
                   //--------------- body ----------------------------
-                  BodyWidget(),
-                  //--------------- Footer ----------------
-                  FooterWidget(),
+                  BodySignWidget(),
+                  // //--------------- Footer ----------------
+                  SizedBox(height: 30),
+                  const DoOrNotHaveAccWidget(
+                    title: "Already have an account?",
+                    subTitle: " Login here",
+                  ),
                 ],
               ),
             ),
@@ -37,3 +41,5 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
+

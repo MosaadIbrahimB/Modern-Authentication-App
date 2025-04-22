@@ -4,8 +4,8 @@ import '../../feature/auth/screen/login_screen.dart';
 import '../utils/app_color.dart';
 import '../utils/app_text_style.dart';
 class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({super.key});
-
+  const ButtonWidget({super.key, required this.title});
+final String title;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -31,7 +31,7 @@ class ButtonWidget extends StatelessWidget {
         ),
         width: 199,
         height: 53,
-        child: Text("LOG IN", style: AppTextStyle.roboto16WhiteW700),
+        child: Text(title, style: AppTextStyle.roboto16WhiteW700),
       ),
     );
   }
