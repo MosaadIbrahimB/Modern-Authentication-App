@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modern_authentication_app/feature/auth/screen/login_screen.dart';
 import '../widget/body_sign_widget.dart';
 import '../widget/do_not_have_acc_widget.dart';
 import '../widget/header_widget.dart';
@@ -28,7 +29,13 @@ class SignUpScreen extends StatelessWidget {
                   BodySignWidget(),
                   // //--------------- Footer ----------------
                   SizedBox(height: 30),
-                  const DoOrNotHaveAccWidget(
+                  DoOrNotHaveAccWidget(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
+                    },
                     title: "Already have an account?",
                     subTitle: " Login here",
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:modern_authentication_app/feature/auth/screen/sign_up_screen.dart';
 import '../widget/body_widget.dart';
 import '../widget/box_Top_login_screen_widget.dart';
 import '../widget/footer_widget.dart';
@@ -27,7 +28,14 @@ class LoginScreen extends StatelessWidget {
                   //--------------- body ----------------------------
                   BodyWidget(),
                   //--------------- Footer ----------------
-                  FooterWidget(),
+                  FooterWidget(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignUpScreen()),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),

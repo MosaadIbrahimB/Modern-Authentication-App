@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-
-import '../../feature/auth/screen/login_screen.dart';
 import '../utils/app_color.dart';
 import '../utils/app_text_style.dart';
+
 class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({super.key, required this.title});
+  const ButtonWidget({super.key, required this.title, this.onTap});
 final String title;
+final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(

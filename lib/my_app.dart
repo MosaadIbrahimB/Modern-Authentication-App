@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../feature/auth/screen/sign_up_screen.dart';
+import 'package:modern_authentication_app/feature/home/presentation/screen/home_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Modern Authentication',
-      home: SignUpScreen(),
+      home: HomeScreen(),
     );
   }
 }

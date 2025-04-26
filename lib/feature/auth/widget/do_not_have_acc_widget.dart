@@ -6,12 +6,12 @@ class DoOrNotHaveAccWidget extends StatelessWidget {
   const DoOrNotHaveAccWidget({
     super.key,
     required this.title,
-    required this.subTitle,
+    required this.subTitle, this.onTap,
   });
 
   final String title;
   final String subTitle;
-
+final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -25,11 +25,14 @@ class DoOrNotHaveAccWidget extends StatelessWidget {
           ),
         ),
         SizedBox(width: 5),
-        Text(
-          subTitle,
-          style: AppTextStyle.roboto14BlackW700.copyWith(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
+        InkWell(
+          onTap: onTap,
+          child: Text(
+            subTitle,
+            style: AppTextStyle.roboto14BlackW700.copyWith(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],
