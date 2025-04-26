@@ -3,22 +3,26 @@ import 'package:modern_authentication_app/feature/auth/widget/social_login_widge
 
 import '../../../core/utils/app_text_style.dart';
 import 'do_not_have_acc_widget.dart';
+
 class FooterWidget extends StatelessWidget {
-  const FooterWidget({super.key});
+  const FooterWidget({super.key, this.onTap});
+
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(height: 20),
-        Text(
-          "Or sign up using ",
-          style: AppTextStyle.helvetica15BlackW400,
-        ),
+        Text("Or sign up using ", style: AppTextStyle.helvetica15BlackW400),
         const SizedBox(height: 20),
         const SocialLoginWidget(),
         const SizedBox(height: 30),
-        const DoOrNotHaveAccWidget(title: "Don't have an account?",subTitle:   "Sign up",),
+         DoOrNotHaveAccWidget(
+          title: "Don't have an account?",
+          subTitle: "Sign up",
+          onTap: onTap,
+        ),
       ],
     );
   }

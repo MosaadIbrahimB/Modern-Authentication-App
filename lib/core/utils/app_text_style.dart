@@ -34,5 +34,14 @@ class AppTextStyle {
     color: Colors.black,
     fontFamily: "Roboto",
   );
+
+
+  static TextStyle inter16BlackW700 = TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    fontFamily: "Inter",
+    fontWeight: FontWeight.w600
+  );
+
 }
 

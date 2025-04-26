@@ -19,6 +19,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/fruit/
 
   fonts:
    - family: Prime
@@ -44,3 +45,11 @@ flutter:
    - family: Helvetica
      fonts:
        - asset: assets/fonts/Helvetica.ttf
+
+   - family: BalooDa
+     fonts:
+       - asset: assets/fonts/BalooDa-Regular.ttf
+
+
+
+

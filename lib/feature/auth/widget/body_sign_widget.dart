@@ -3,10 +3,9 @@ import 'package:modern_authentication_app/feature/auth/widget/password_text_form
 import 'package:modern_authentication_app/feature/auth/widget/s_z_box_h25_widget.dart';
 import 'package:modern_authentication_app/feature/auth/widget/text_form_field_widget.dart';
 import '../../../core/widget/button_widget.dart';
+
 class BodySignWidget extends StatelessWidget {
-  const BodySignWidget({
-    super.key,
-  });
+  const BodySignWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +42,17 @@ class BodySignWidget extends StatelessWidget {
           labelText: "Confirm Password",
         ),
         SZBoxH25Widget(),
-        ButtonWidget(title: "CREATE"),
+        ButtonWidget(
+          title: "CREATE",
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("Account Created"),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
+        ),
       ],
     );
   }

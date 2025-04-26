@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String fontsBalooDaRegular = 'assets/fonts/BalooDa-Regular.ttf';
   static const String fontsHelvetica = 'assets/fonts/Helvetica.ttf';
   static const String fontsInter18ptBold = 'assets/fonts/Inter_18pt-Bold.ttf';
   static const String fontsInter18ptRegular = 'assets/fonts/Inter_18pt-Regular.ttf';
@@ -9,6 +10,16 @@ class Assets {
   static const String fontsPrimeRegular = 'assets/fonts/Prime-Regular.otf';
   static const String fontsRobotoCondensedBold = 'assets/fonts/Roboto_Condensed-Bold.ttf';
   static const String fontsRobotoCondensedRegular = 'assets/fonts/Roboto_Condensed-Regular.ttf';
+  static const String fruitArrowDawn = 'assets/images/fruit/arrow_dawn.svg';
+  static const String fruitBage = 'assets/images/fruit/bage.svg';
+  static const String fruitF1 = 'assets/images/fruit/f1.svg';
+  static const String fruitF2 = 'assets/images/fruit/f2.svg';
+  static const String fruitF3 = 'assets/images/fruit/f3.svg';
+  static const String fruitF4 = 'assets/images/fruit/f4.svg';
+  static const String fruitF5 = 'assets/images/fruit/f5.svg';
+  static const String fruitF6 = 'assets/images/fruit/f6.svg';
+  static const String fruitMotocycle = 'assets/images/fruit/motocycle.svg';
+  static const String fruitStar = 'assets/images/fruit/star.svg';
   static const String imagesBackgroundSplash = 'assets/images/background_splash.png';
   static const String imagesBoxBlue = 'assets/images/box_blue.svg';
   static const String imagesBoxGray = 'assets/images/box_gray.svg';

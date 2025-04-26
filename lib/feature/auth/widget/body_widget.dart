@@ -3,6 +3,7 @@ import '../../../core/widget/button_widget.dart';
 import 'forgot_password_widget.dart';
 import 'password_text_form_field_widget.dart';
 import 'text_form_field_widget.dart';
+
 class BodyWidget extends StatelessWidget {
   const BodyWidget({super.key});
 
@@ -25,7 +26,17 @@ class BodyWidget extends StatelessWidget {
         SizedBox(height: 20),
         ForgotPasswordWidget(),
         SizedBox(height: 30),
-        ButtonWidget(title:  "LOG IN",),
+        ButtonWidget(
+          title: "LOG IN",
+          onTap: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("login successfully"),
+                duration: Duration(seconds: 2),
+              ),
+            );
+          },
+        ),
       ],
     );
   }
