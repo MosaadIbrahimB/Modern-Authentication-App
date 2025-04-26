@@ -12,22 +12,4 @@ class CarouselSliderModel {
     required this.offer,
   });
 
-  static List<CarouselSliderModel> listCarousel = [
-    CarouselSliderModel(
-      image: "assets/images/fruit/f1.png",
-      offer: "Up to 30% offer",
-        backColor:AppColor.green
-    ),
-    CarouselSliderModel(
-        image: "assets/images/fruit/f2.png",
-        offer: "Up to 30% offer",
-        backColor:AppColor.green100
-    ),
-    CarouselSliderModel(
-        image: "assets/images/fruit/f3.png",
-        offer: "Up to 30% offer",
-        backColor:AppColor.yellow
-    ),
-
-  ];
 }

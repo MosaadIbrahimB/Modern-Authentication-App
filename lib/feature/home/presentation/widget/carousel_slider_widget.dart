@@ -1,13 +1,23 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart' ;
 
+import '../../data/repo/repo.dart';
+import 'item_slider_Widget.dart';
+
 class CarouselSliderWidget extends StatelessWidget {
-  const CarouselSliderWidget({super.key, required this.item});
-  final List<Widget>item;
+ final  List<Widget> items = List.generate(
+    Repo.listCarousel.length,
+        (index) => ItemSliderWidget(
+      carouselSliderModel: Repo.listCarousel[index],
+    ),
+  );
+
+
+   CarouselSliderWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-      items: item,
+      items: items,
       options: CarouselOptions(
         height: 160,
         aspectRatio: 1,
