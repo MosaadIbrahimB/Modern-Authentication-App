@@ -36,6 +36,7 @@ class Repo {
 
   static final List<ProductModel> listProduct = [
     ProductModel(
+      id: "1",
       image: "assets/images/fruit/f9.png",
       title: "Banana",
       rating: "4.8",
@@ -43,6 +44,7 @@ class Repo {
       price: "3.99",
     ),
     ProductModel(
+      id: "2",
       image: "assets/images/fruit/f10.png",
       title: "Pepper",
       rating: "4.8",
@@ -50,6 +52,7 @@ class Repo {
       price: "2.99",
     ),
     ProductModel(
+      id: "3",
       image: "assets/images/fruit/f11.png",
       title: "Orange",
       rating: "4.8",
@@ -57,6 +60,7 @@ class Repo {
       price: "3.99",
     ),
     ProductModel(
+      id: "4",
       image: "assets/images/fruit/f12.png",
       title: "Orange",
       rating: "4.8",
@@ -64,6 +68,7 @@ class Repo {
       price: "3.99",
     ),
     ProductModel(
+      id: "5",
       image: "assets/images/fruit/f13.png",
       title: "Purex",
       rating: "4.8",
