@@ -1,4 +1,6 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:modern_authentication_app/feature/home/presentation/screen/home_screen.dart';
 
 import '../../../data/model/product_model.dart';
 import '../../../data/repo/repo.dart';
@@ -6,6 +8,15 @@ import '../../../data/repo/repo.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitialState());
   bool _view = false;
+  int _index = 0;
+
+  int getIndex() => _index;
+
+  changeIndex(int newIndex) {
+    _index = newIndex;
+
+    emit(ChangeIndexScreenState());
+  }
 
   addBagItem(List<ProductModel> bagProduct, ProductModel product) {
     List<ProductModel> pro = Repo.listProduct;
@@ -67,3 +78,5 @@ class AddItemOfBagState extends HomeState {}
 class SubItemOfBagState extends HomeState {}
 
 class ViewBasketState extends HomeState {}
+
+class ChangeIndexScreenState extends HomeState {}
