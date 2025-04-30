@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:modern_authentication_app/feature/home/presentation/control/home/home_cubit.dart';
 
 import '../../../../core/utils/app_text_style.dart';
 class AppBarWidget extends StatelessWidget {
@@ -18,7 +20,12 @@ class AppBarWidget extends StatelessWidget {
         SizedBox(width: 8),
         SvgPicture.asset("assets/images/fruit/arrow_dawn.svg"),
         Spacer(),
-        SvgPicture.asset("assets/images/fruit/bage.svg",width: 25,),
+        GestureDetector(
+            onTap: (){
+              BlocProvider.of<HomeCubit>(context).changeViewBasket();
+            },
+
+            child: SvgPicture.asset("assets/images/fruit/bage.svg",width: 25,)),
       ],
     );
   }

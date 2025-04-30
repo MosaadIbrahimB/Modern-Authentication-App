@@ -1,10 +1,22 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:modern_authentication_app/feature/home/presentation/screen/home_screen.dart';
 
 import '../../../data/model/product_model.dart';
 import '../../../data/repo/repo.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitialState());
+  bool _view = false;
+  int _index = 0;
+
+  int getIndex() => _index;
+
+  changeIndex(int newIndex) {
+    _index = newIndex;
+
+    emit(ChangeIndexScreenState());
+  }
 
   addBagItem(List<ProductModel> bagProduct, ProductModel product) {
     List<ProductModel> pro = Repo.listProduct;
@@ -31,7 +43,29 @@ class HomeCubit extends Cubit<HomeState> {
     pro[pos].count--;
     int index = bagProduct.indexWhere((item) => item.id == product.id);
     bagProduct[index].count--;
+    if (bagProduct[index].count == 0) {
+      bagProduct.removeAt(index);
+    }
     emit(SubItemOfBagState());
+  }
+
+  bool getView() {
+    return _view;
+  }
+
+  changeViewBasket() {
+    _view = !_view;
+    emit(ViewBasketState());
+  }
+
+  int calcItemInBasket() {
+    int sum = 0;
+    if (Repo.bagProduct.isNotEmpty) {
+      for (ProductModel p in Repo.bagProduct) {
+        sum += p.count;
+      }
+    }
+    return sum;
   }
 }
 
@@ -42,3 +76,7 @@ class HomeInitialState extends HomeState {}
 class AddItemOfBagState extends HomeState {}
 
 class SubItemOfBagState extends HomeState {}
+
+class ViewBasketState extends HomeState {}
+
+class ChangeIndexScreenState extends HomeState {}
