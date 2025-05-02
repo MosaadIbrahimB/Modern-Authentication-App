@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modern_authentication_app/feature/home/presentation/widget/product_list_widget.dart';
 import 'package:modern_authentication_app/feature/home/presentation/widget/see_all_widget.dart';
-import 'app_bar_fruits_widget.dart';
-import 'bag_item_widget.dart';
+
 import 'carousel_slider_widget.dart';
 import 'category_list_widget.dart';
 class BodyHomeScreenWidget extends StatelessWidget {
@@ -16,7 +15,6 @@ class BodyHomeScreenWidget extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              AppBarWidget(),
               SizedBox(height: 15),
               CarouselSliderWidget(),
               SizedBox(height: 15),
@@ -30,9 +28,7 @@ class BodyHomeScreenWidget extends StatelessWidget {
                     SeeAllWidget(),
                     SizedBox(height: 10),
                     ProductListWidget(),
-                    SizedBox(height: 10),
-                    BagItemWidget(),
-                    SizedBox(height: 75,)
+                    SizedBox(height: 90,)
                   ],
                 ),
               ),

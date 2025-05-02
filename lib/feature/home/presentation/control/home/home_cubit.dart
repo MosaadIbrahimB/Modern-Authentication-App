@@ -67,6 +67,21 @@ class HomeCubit extends Cubit<HomeState> {
     }
     return sum;
   }
+
+  getBagProduct() {
+    return Repo.bagProduct;
+  }
+
+  String calcCheck() {
+    double sum = 0;
+    if (Repo.bagProduct.isNotEmpty) {
+      for (ProductModel p in Repo.bagProduct) {
+        sum += double.parse(p.price) * p.count;
+      }
+    }
+    double rounded = double.parse(sum.toStringAsFixed(2));
+    return rounded.toString();
+  }
 }
 
 class HomeState {}
@@ -80,3 +95,6 @@ class SubItemOfBagState extends HomeState {}
 class ViewBasketState extends HomeState {}
 
 class ChangeIndexScreenState extends HomeState {}
+class CalcCheckState extends HomeState {}
+
+

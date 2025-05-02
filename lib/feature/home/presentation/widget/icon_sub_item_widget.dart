@@ -16,7 +16,6 @@ class IconSubItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-
         ProductModel p = ProductModel(
           id: productModel!.id,
           image: productModel!.image,
