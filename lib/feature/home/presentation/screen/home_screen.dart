@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               Positioned
                 (
                   bottom: 0,
-                  child: Center(child: BagItemWidget())),
+                  child: Center(child: ContainerGreenItemBagWidget())),
             ],
           );
         },

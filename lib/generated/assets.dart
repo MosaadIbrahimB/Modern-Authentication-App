@@ -34,6 +34,7 @@ class Assets {
   static const String imagesGoogle = 'assets/images/google.png';
   static const String imagesLogoImage = 'assets/images/logo_image.png';
   static const String imagesMac = 'assets/images/mac.png';
+  static const String imagesOrder = 'assets/images/order.png';
   static const String imagesTrashIcon = 'assets/images/trash-icon.png';
 
 }

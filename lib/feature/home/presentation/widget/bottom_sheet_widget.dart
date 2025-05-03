@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modern_authentication_app/core/utils/app_text_style.dart';
 import 'package:modern_authentication_app/feature/home/presentation/widget/text_basket_view_and_icon_basket_widget.dart';
+import 'package:modern_authentication_app/my_app.dart';
 import '../../../../core/utils/app_color.dart';
 import '../control/home/home_cubit.dart';
 import 'list_item_of_bottom_sheet_widget.dart';
@@ -30,9 +31,10 @@ class BottomSheetWidget extends StatelessWidget {
                 decoration: BoxDecoration(color: Color(0xffd9d9d9)),
               ),
               ListItemOfBottomSheetWidget(),
-Text("You are \$3.50 away from free delivery"
-,style: AppTextStyle.inter16BlackW700,
-),
+              Text(
+                "You are \$3.50 away from free delivery",
+                style: AppTextStyle.inter16BlackW700,
+              ),
               SizedBox(height: 8),
               Stack(
                 children: [
@@ -43,7 +45,6 @@ Text("You are \$3.50 away from free delivery"
                     ),
                     width: MediaQuery.sizeOf(context).width * .95,
                     height: 8,
-
                   ),
 
                   Container(
@@ -53,23 +54,28 @@ Text("You are \$3.50 away from free delivery"
                     ),
                     width: MediaQuery.sizeOf(context).width * .65,
                     height: 8,
-
                   ),
                 ],
               ),
               SizedBox(height: 20),
-              Container(
-                decoration: BoxDecoration(
-                  color: AppColor.green,
-                  borderRadius: BorderRadius.circular(18),
-                ),
-                width: MediaQuery.sizeOf(context).width * .95,
-                height: 65,
+              InkWell(
+                onTap: (){
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, AppRoute.cart);
+                },
                 child: Container(
-                  alignment: AlignmentDirectional.center,
-                  child: TextBasketViewAndIconBasketWidget(
-                    goToCheck: true,
-                    title: "Go to Cart",
+                  decoration: BoxDecoration(
+                    color: AppColor.green,
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                  width: MediaQuery.sizeOf(context).width * .95,
+                  height: 65,
+                  child: Container(
+                    alignment: AlignmentDirectional.center,
+                    child: TextBasketViewAndIconBasketWidget(
+                      goToCheck: true,
+                      title: "Go to Cart",
+                    ),
                   ),
                 ),
               ),
@@ -132,4 +138,3 @@ Text("You are \$3.50 away from free delivery"
     );
   }
 }
-
