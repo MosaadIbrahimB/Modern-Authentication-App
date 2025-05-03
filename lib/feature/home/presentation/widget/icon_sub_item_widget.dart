@@ -25,6 +25,8 @@ class IconSubItemWidget extends StatelessWidget {
         );
 
         BlocProvider.of<HomeCubit>(context).subBagItem(Repo.bagProduct, p);
+
+
       },
 
       child: CircleIconWidget(

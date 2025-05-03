@@ -28,10 +28,13 @@ class HomeScreen extends StatelessWidget {
           return Stack(
             children: [
               screen[BlocProvider.of<HomeCubit>(context).getIndex()],
-              Positioned
-                (
-                  bottom: 0,
-                  child: Center(child: ContainerGreenItemBagWidget())),
+              AnimatedPositioned(
+                duration: Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+                bottom:
+                    BlocProvider.of<HomeCubit>(context).getView() ? 0 : -200,
+                child: Center(child: ContainerGreenItemBagWidget()),
+              ),
             ],
           );
         },
