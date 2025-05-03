@@ -4,11 +4,9 @@ import '../../data/model/product_model.dart';
 import '../../data/repo/repo.dart';
 import '../control/home/home_cubit.dart';
 import 'circle_icon_add_widget.dart';
+
 class IconSubItemWidget extends StatelessWidget {
-  const IconSubItemWidget({
-    super.key,
-    required this.productModel,
-  });
+  const IconSubItemWidget({super.key, required this.productModel});
 
   final ProductModel? productModel;
 
@@ -16,7 +14,6 @@ class IconSubItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-
         ProductModel p = ProductModel(
           id: productModel!.id,
           image: productModel!.image,
@@ -24,16 +21,18 @@ class IconSubItemWidget extends StatelessWidget {
           rating: "4.8",
           ratingCount: "287",
           price: productModel!.price,
-          count: productModel!.count
+          count: productModel!.count,
         );
 
-        BlocProvider.of<HomeCubit>(
-          context,
-        ).subBagItem(Repo.bagProduct, p);
+        BlocProvider.of<HomeCubit>(context).subBagItem(Repo.bagProduct, p);
       },
 
-      child: CircleIconWidget(icon: Icons.delete,),
+      child: CircleIconWidget(
+        widget: SizedBox(
+            width: 20,
+            height: 20,
+            child: Image.asset("assets/images/trash-icon.png")),
+      ),
     );
   }
 }
-

@@ -31,7 +31,7 @@ class IconAddItemWidget extends StatelessWidget {
         ).addBagItem(Repo.bagProduct, p);
       },
 
-      child: CircleIconWidget(icon: Icons.add,),
+      child: CircleIconWidget(widget: Icon(Icons.add),),
     );
   }
 }

@@ -75,6 +75,38 @@ class Repo {
       ratingCount: "287",
       price: "3.99",
     ),
+    ProductModel(
+      id: "6",
+      image: "assets/images/fruit/f13.png",
+      title: "Purex",
+      rating: "4.8",
+      ratingCount: "287",
+      price: "3.99",
+    ),
+    ProductModel(
+      id: "7",
+      image: "assets/images/fruit/f13.png",
+      title: "Purex",
+      rating: "4.8",
+      ratingCount: "287",
+      price: "3.99",
+    ),
+    ProductModel(
+      id: "8",
+      image: "assets/images/fruit/f13.png",
+      title: "Purex",
+      rating: "4.8",
+      ratingCount: "287",
+      price: "3.99",
+    ),
+    ProductModel(
+      id: "9",
+      image: "assets/images/fruit/f13.png",
+      title: "Purex",
+      rating: "4.8",
+      ratingCount: "287",
+      price: "3.99",
+    ),
   ];
 
   static final List<ProductModel> bagProduct = [

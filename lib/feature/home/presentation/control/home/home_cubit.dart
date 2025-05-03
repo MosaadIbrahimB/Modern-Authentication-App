@@ -1,6 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:modern_authentication_app/feature/home/presentation/screen/home_screen.dart';
 
 import '../../../data/model/product_model.dart';
 import '../../../data/repo/repo.dart';
@@ -67,6 +65,23 @@ class HomeCubit extends Cubit<HomeState> {
     }
     return sum;
   }
+
+  getBagProduct() {
+    return Repo.bagProduct;
+  }
+
+  String calcCheck() {
+    double sum = 0;
+    if (Repo.bagProduct.isNotEmpty) {
+      for (ProductModel p in Repo.bagProduct) {
+        sum += double.parse(p.price) * p.count;
+      }
+    }
+    return sum.toStringAsFixed(2);
+  }
+
+
+
 }
 
 class HomeState {}
@@ -80,3 +95,5 @@ class SubItemOfBagState extends HomeState {}
 class ViewBasketState extends HomeState {}
 
 class ChangeIndexScreenState extends HomeState {}
+
+
