@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modern_authentication_app/core/utils/app_text_style.dart';
 import 'package:modern_authentication_app/feature/home/presentation/widget/text_basket_view_and_icon_basket_widget.dart';
-
 import '../../../../core/utils/app_color.dart';
-import '../../../../core/utils/app_text_style.dart';
-import '../../data/repo/repo.dart';
 import '../control/home/home_cubit.dart';
-import 'icon_add_item_widget.dart';
-import 'icon_sub_item_widget.dart';
+import 'list_item_of_bottom_sheet_widget.dart';
 
 class BottomSheetWidget extends StatelessWidget {
   const BottomSheetWidget({super.key});
@@ -32,81 +29,44 @@ class BottomSheetWidget extends StatelessWidget {
                 height: 5,
                 decoration: BoxDecoration(color: Color(0xffd9d9d9)),
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: Repo.bagProduct.length,
-                  itemBuilder:
-                      (context, index) => Row(
-                        children: [
-                          Container(
-                            width: 80,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade100,
-                              borderRadius: BorderRadius.circular(12),
-                              image: DecorationImage(
-                                image: AssetImage(Repo.bagProduct[index].image),
-                                // fit: BoxFit.fill,
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 20),
-                          Column(
-                            children: [
-                              Text(
-                                Repo.bagProduct[index].title,
-                                style: AppTextStyle.inter16BlackW700,
-                              ),
-                              Text(
-                                "\$${Repo.bagProduct[index].price}",
-                                style: AppTextStyle.inter16BlackW700.copyWith(
-                                  fontSize: 14,
-                                  color: Colors.black54,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Spacer(),
-                          Container(
-                            alignment: AlignmentDirectional.centerEnd,
-                            width: 130,
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                IconSubItemWidget(
-                                  productModel: Repo.bagProduct[index],
-                                ),
-                                SizedBox(width: 10),
-                                SizedBox(
-                                  width: 40,
-                                  child: Center(
-                                    child: Text(
-                                      "${Repo.bagProduct[index].count ?? 0}",
-                                      style: AppTextStyle.inter16BlackW700,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(width: 10),
-                                IconAddItemWidget(
-                                  productModel: Repo.bagProduct[index],
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                        ],
-                      ),
+              ListItemOfBottomSheetWidget(),
+Text("You are \$3.50 away from free delivery"
+,style: AppTextStyle.inter16BlackW700,
+),
+              SizedBox(height: 8),
+              Stack(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xffECECEC),
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    width: MediaQuery.sizeOf(context).width * .95,
+                    height: 8,
 
-                ),
+                  ),
+
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColor.green,
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    width: MediaQuery.sizeOf(context).width * .65,
+                    height: 8,
+
+                  ),
+                ],
               ),
+              SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
                   color: AppColor.green,
                   borderRadius: BorderRadius.circular(18),
                 ),
                 width: MediaQuery.sizeOf(context).width * .95,
-                height: 60,
-                child: Center(
+                height: 65,
+                child: Container(
+                  alignment: AlignmentDirectional.center,
                   child: TextBasketViewAndIconBasketWidget(
                     goToCheck: true,
                     title: "Go to Cart",
@@ -172,3 +132,4 @@ class BottomSheetWidget extends StatelessWidget {
     );
   }
 }
+

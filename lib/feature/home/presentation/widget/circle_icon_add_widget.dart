@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 class CircleIconWidget extends StatelessWidget {
   const CircleIconWidget({
-    super.key, this.icon,
+    super.key, this.widget,
   });
-final IconData? icon;
+final Widget? widget;
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
@@ -12,7 +12,8 @@ final IconData? icon;
       child: CircleAvatar(
         radius: 15,
         backgroundColor: Colors.white,
-        child: Icon(icon, size: 25),
+        // child: Icon(icon, size: 25),
+      child: widget,
       ),
     );
   }

@@ -1,6 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:modern_authentication_app/feature/home/presentation/screen/home_screen.dart';
 
 import '../../../data/model/product_model.dart';
 import '../../../data/repo/repo.dart';
@@ -79,9 +77,11 @@ class HomeCubit extends Cubit<HomeState> {
         sum += double.parse(p.price) * p.count;
       }
     }
-    double rounded = double.parse(sum.toStringAsFixed(2));
-    return rounded.toString();
+    return sum.toStringAsFixed(2);
   }
+
+
+
 }
 
 class HomeState {}
@@ -95,6 +95,5 @@ class SubItemOfBagState extends HomeState {}
 class ViewBasketState extends HomeState {}
 
 class ChangeIndexScreenState extends HomeState {}
-class CalcCheckState extends HomeState {}
 
 
