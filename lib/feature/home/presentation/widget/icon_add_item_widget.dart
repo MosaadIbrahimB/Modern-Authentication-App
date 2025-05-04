@@ -4,17 +4,15 @@ import '../../data/model/product_model.dart';
 import '../../data/repo/repo.dart';
 import '../control/home/home_cubit.dart';
 import 'circle_icon_add_widget.dart';
+
 class IconAddItemWidget extends StatelessWidget {
-  const IconAddItemWidget({
-    super.key,
-    required this.productModel,
-  });
+  const IconAddItemWidget({super.key, required this.productModel});
 
   final ProductModel? productModel;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         ProductModel p = ProductModel(
           id: productModel!.id,
@@ -23,16 +21,16 @@ class IconAddItemWidget extends StatelessWidget {
           rating: "4.8",
           ratingCount: "287",
           price: productModel!.price,
-          count: productModel!.count
+          count: productModel!.count,
         );
 
-        BlocProvider.of<HomeCubit>(
-          context,
-        ).addBagItem(Repo.bagProduct, p);
+
+        BlocProvider.of<HomeCubit>(context).addBagItem(Repo.bagProduct, p);
+
+
       },
 
-      child: CircleIconWidget(widget: Icon(Icons.add),),
+      child: CircleIconWidget(widget: Icon(Icons.add)),
     );
   }
 }
-

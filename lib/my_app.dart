@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modern_authentication_app/feature/home/presentation/screen/home_screen.dart';
-
+import 'core/configure/route/app_route.dart';
 import 'feature/home/presentation/control/home/home_cubit.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,8 +13,12 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Modern Authentication',
-        home: HomeScreen(),
+        // home: HomeScreen(),
+        onGenerateRoute: AppRoute.onGenerateRoute,
       ),
     );
   }
 }
+
+
+

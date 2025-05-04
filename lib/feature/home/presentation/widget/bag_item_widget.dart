@@ -5,8 +5,8 @@ import '../../../../core/utils/app_color.dart';
 import '../control/home/home_cubit.dart';
 import 'list_item_of_bag_widget.dart';
 
-class BagItemWidget extends StatelessWidget {
-  const BagItemWidget({super.key});
+class ContainerGreenItemBagWidget extends StatelessWidget {
+  const ContainerGreenItemBagWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

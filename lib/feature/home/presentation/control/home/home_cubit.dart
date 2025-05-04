@@ -17,6 +17,13 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   addBagItem(List<ProductModel> bagProduct, ProductModel product) {
+    bool e = isBagEmpty();
+    if (e) {
+      _view = true;
+    }
+    if (!e&&!_view) {
+      _view = true;
+    }
     List<ProductModel> pro = Repo.listProduct;
     int pos = pro.indexWhere((item) => item.id == product.id);
     pro[pos].count++;
@@ -44,6 +51,12 @@ class HomeCubit extends Cubit<HomeState> {
     if (bagProduct[index].count == 0) {
       bagProduct.removeAt(index);
     }
+
+    bool e = isBagEmpty();
+    if (e) {
+      changeViewBasket();
+    }
+
     emit(SubItemOfBagState());
   }
 
@@ -51,7 +64,7 @@ class HomeCubit extends Cubit<HomeState> {
     return _view;
   }
 
-  changeViewBasket() {
+  void changeViewBasket() {
     _view = !_view;
     emit(ViewBasketState());
   }
@@ -70,6 +83,10 @@ class HomeCubit extends Cubit<HomeState> {
     return Repo.bagProduct;
   }
 
+  isBagEmpty() {
+    return Repo.bagProduct.isEmpty;
+  }
+
   String calcCheck() {
     double sum = 0;
     if (Repo.bagProduct.isNotEmpty) {
@@ -79,9 +96,6 @@ class HomeCubit extends Cubit<HomeState> {
     }
     return sum.toStringAsFixed(2);
   }
-
-
-
 }
 
 class HomeState {}
@@ -95,5 +109,3 @@ class SubItemOfBagState extends HomeState {}
 class ViewBasketState extends HomeState {}
 
 class ChangeIndexScreenState extends HomeState {}
-
-
