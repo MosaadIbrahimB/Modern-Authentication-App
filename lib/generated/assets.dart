@@ -32,8 +32,12 @@ class Assets {
   static const String imagesBoxGray = 'assets/images/box_gray.svg';
   static const String imagesFace = 'assets/images/face.png';
   static const String imagesGoogle = 'assets/images/google.png';
+  static const String imagesIconAddNote = 'assets/images/icon_add_note.png';
+  static const String imagesIconSendGift = 'assets/images/icon_send_gift.png';
+  static const String imagesIconTotal = 'assets/images/icon_total.png';
   static const String imagesLogoImage = 'assets/images/logo_image.png';
   static const String imagesMac = 'assets/images/mac.png';
+  static const String imagesMotocycle = 'assets/images/motocycle.png';
   static const String imagesOrder = 'assets/images/order.png';
   static const String imagesTrashIcon = 'assets/images/trash-icon.png';
 

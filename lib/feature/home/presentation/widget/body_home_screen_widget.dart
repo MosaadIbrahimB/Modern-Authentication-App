@@ -25,7 +25,7 @@ class BodyHomeScreenWidget extends StatelessWidget {
                   children: [
                     CategoryListWidget(),
                     SizedBox(height: 20),
-                    SeeAllWidget(),
+                    SeeAllWidget(title: "Fruits",),
                     SizedBox(height: 10),
                     ProductListWidget(),
                     SizedBox(height: 90,)

@@ -12,7 +12,8 @@ class IconSubItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
+
       onTap: () {
         ProductModel p = ProductModel(
           id: productModel!.id,
