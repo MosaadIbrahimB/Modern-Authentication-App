@@ -51,7 +51,8 @@ class CheckOutScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 20),
-                  ButtonGreenWidget(onTap: (){
+                  ButtonGreenWidget(title:"Place Order"
+                     ,onTap: (){
                     Navigator.pushNamed(context, "/payment");
                   },),
                   SizedBox(height: 20),

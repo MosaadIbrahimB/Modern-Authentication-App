@@ -49,5 +49,10 @@ class Assets {
   static const String imagesMotocycle = 'assets/images/motocycle.png';
   static const String imagesOrder = 'assets/images/order.png';
   static const String imagesTrashIcon = 'assets/images/trash-icon.png';
+  static const String payBCard = 'assets/images/pay/b_card.png';
+  static const String payBlueCard = 'assets/images/pay/blue_card.png';
+  static const String payCvc = 'assets/images/pay/cvc.png';
+  static const String payMasterCard = 'assets/images/pay/master_card.png';
+  static const String payVisa = 'assets/images/pay/visa.png';
 
 }
