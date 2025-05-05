@@ -31,44 +31,48 @@ class ListItemOfBottomSheetWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 20),
-                  Column(
-                    children: [
-                      Text(
-                        Repo.bagProduct[index].title,
-                        style: AppTextStyle.inter16BlackW700,
-                      ),
-                      Text(
-                        "\$${Repo.bagProduct[index].price}",
-                        style: AppTextStyle.inter16BlackW700.copyWith(
-                          fontSize: 14,
-                          color: Colors.black54,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Spacer(),
-                  Container(
-                    alignment: AlignmentDirectional.centerEnd,
-                    width: 130,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        IconSubItemWidget(productModel: Repo.bagProduct[index]),
-                        SizedBox(width: 10),
-                        SizedBox(
-                          width: 40,
-                          child: Center(
-                            child: Text(
-                              "${Repo.bagProduct[index].count ?? 0}",
-                              style: AppTextStyle.inter16BlackW700,
-                            ),
+                        SizedBox(height: 8),
+                        Text(
+                          Repo.bagProduct[index].title,
+                          style: AppTextStyle.inter16BlackW700,
+                        ),
+                        Text(
+                          "\$${Repo.bagProduct[index].price}",
+                          style: AppTextStyle.inter16BlackW700.copyWith(
+                            fontSize: 14,
+                            color: Colors.black54,
                           ),
                         ),
-                        SizedBox(width: 10),
-                        IconAddItemWidget(productModel: Repo.bagProduct[index]),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            IconSubItemWidget(
+                              productModel: Repo.bagProduct[index],
+                            ),
+                            SizedBox(width: 10),
+                            SizedBox(
+                              width: 40,
+                              child: Center(
+                                child: Text(
+                                  "${Repo.bagProduct[index].count ?? 0}",
+                                  style: AppTextStyle.inter16BlackW700,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            IconAddItemWidget(
+                              productModel: Repo.bagProduct[index],
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
+
                   SizedBox(width: 10),
                 ],
               ),

@@ -13,12 +13,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Modern Authentication',
-        // home: HomeScreen(),
+        // home: AddRoomPage(),
         onGenerateRoute: AppRoute.onGenerateRoute,
       ),
     );
   }
 }
-
 
 
