@@ -21,6 +21,8 @@ class CustomCardCreditWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 10),
+
         Text(
           "Card number",
           style: AppTextStyle.inter16BlackW700.copyWith(
