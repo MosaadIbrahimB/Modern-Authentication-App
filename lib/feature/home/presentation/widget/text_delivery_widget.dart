@@ -18,26 +18,37 @@ class TextDeliveryWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 8),
-        Stack(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: Color(0xffECECEC),
-                borderRadius: BorderRadius.circular(18),
-              ),
-              width: MediaQuery.sizeOf(context).width * .95,
-              height: 6,
-            ),
+        HorizontalLineWidget(),
+      ],
+    );
+  }
+}
 
-            Container(
-              decoration: BoxDecoration(
-                color: AppColor.green,
-                borderRadius: BorderRadius.circular(18),
-              ),
-              width: MediaQuery.sizeOf(context).width * .65,
-              height: 6,
-            ),
-          ],
+class HorizontalLineWidget extends StatelessWidget {
+  const HorizontalLineWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Color(0xffECECEC),
+            borderRadius: BorderRadius.circular(18),
+          ),
+          width: MediaQuery.sizeOf(context).width * .95,
+          height: 6,
+        ),
+
+        Container(
+          decoration: BoxDecoration(
+            color: AppColor.green,
+            borderRadius: BorderRadius.circular(18),
+          ),
+          width: MediaQuery.sizeOf(context).width * .65,
+          height: 6,
         ),
       ],
     );

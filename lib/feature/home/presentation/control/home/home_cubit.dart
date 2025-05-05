@@ -1,5 +1,9 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/app_text_style.dart';
+import '../../../../cart/data/model/add_note_model.dart';
+import '../../../../checkout/presentation/widgets/switch_widget.dart';
 import '../../../data/model/product_model.dart';
 import '../../../data/repo/repo.dart';
 
@@ -7,6 +11,9 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitialState());
   bool _view = false;
   int _index = 0;
+  final double _delivery = 3.50;
+  double _total = 0;
+  List<AddNoteModel> orderSummaryList = [];
 
   int getIndex() => _index;
 
@@ -21,7 +28,7 @@ class HomeCubit extends Cubit<HomeState> {
     if (e) {
       _view = true;
     }
-    if (!e&&!_view) {
+    if (!e && !_view) {
       _view = true;
     }
     List<ProductModel> pro = Repo.listProduct;
@@ -55,6 +62,7 @@ class HomeCubit extends Cubit<HomeState> {
     bool e = isBagEmpty();
     if (e) {
       changeViewBasket();
+      calcCheck();
     }
 
     emit(SubItemOfBagState());
@@ -87,6 +95,8 @@ class HomeCubit extends Cubit<HomeState> {
     return Repo.bagProduct.isEmpty;
   }
 
+  List<AddNoteModel> list = [];
+
   String calcCheck() {
     double sum = 0;
     if (Repo.bagProduct.isNotEmpty) {
@@ -94,8 +104,100 @@ class HomeCubit extends Cubit<HomeState> {
         sum += double.parse(p.price) * p.count;
       }
     }
+
+    _total = _delivery + sum;
+    list = [
+      AddNoteModel(
+        pathImage: "assets/images/icon_add_note.png",
+        title: "Add Note",
+        widget: Icon(Icons.arrow_forward_ios, size: 20),
+      ),
+      AddNoteModel(
+        pathImage: "assets/images/icon_send_gift.png",
+        title: "Send as gift",
+        widget: Icon(Icons.arrow_forward_ios, size: 20),
+      ),
+      AddNoteModel(
+        pathImage: "assets/images/motocycle.png",
+        title: "Delivery",
+        widget: Text(
+          "\$${_delivery.toStringAsFixed(2)}",
+          style: AppTextStyle.inter16BlackW700,
+        ),
+      ),
+      AddNoteModel(
+        pathImage: "assets/images/icon_total.png",
+        title: "Total",
+        widget: Text(
+          "\$${_total.toStringAsFixed(2)}",
+          style: AppTextStyle.inter16BlackW700,
+        ),
+      ),
+    ];
+    double serviceFee = 5.25;
+    double bagFee = 5.25;
+    double allTotal = serviceFee + bagFee + sum;
+    orderSummaryList = [
+      AddNoteModel(
+        title: "Subtotal",
+        widget: Text(
+          "\$ ${_total.toStringAsFixed(2)}",
+          style: AppTextStyle.inter16BlackW700.copyWith(
+            color: Colors.black54,
+            fontSize: 14,
+          ),
+        ),
+      ),
+      AddNoteModel(
+        title: "Bag fee ",
+        widget: Text(
+          "\$ $bagFee",
+          style: AppTextStyle.inter16BlackW700.copyWith(
+            color: Colors.black54,
+            fontSize: 14,
+          ),
+        ),
+      ),
+      AddNoteModel(
+        title: "Service fee",
+        widget: Text(
+          "\$ $serviceFee",
+          style: AppTextStyle.inter16BlackW700.copyWith(
+            color: Colors.black54,
+            fontSize: 14,
+          ),
+        ),
+      ),
+      AddNoteModel(
+        title: "Delivery",
+        widget: Text(
+          "\$ ${0.00}",
+          style: AppTextStyle.inter16BlackW700.copyWith(
+            color: Colors.black54,
+            fontSize: 14,
+          ),
+        ),
+      ),
+      AddNoteModel(
+        title: "Total",
+        widget: Text(
+          "\$ ${allTotal.toStringAsFixed(2)}",
+          style: AppTextStyle.inter16BlackW700.copyWith(
+            color: Colors.black54,
+            fontSize: 14,
+          ),
+        ),
+      ),
+      AddNoteModel(
+        title: "Request an invoice",
+        widget: SwitchWidget()
+      ),
+    ];
+
     return sum.toStringAsFixed(2);
   }
+
+  String getTotal() => _total.toStringAsFixed(2);
 }
 
 class HomeState {}
@@ -109,3 +211,5 @@ class SubItemOfBagState extends HomeState {}
 class ViewBasketState extends HomeState {}
 
 class ChangeIndexScreenState extends HomeState {}
+
+

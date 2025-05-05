@@ -2,6 +2,15 @@
 class Assets {
   Assets._();
 
+  static const String checkoutApplePay = 'assets/images/checkout/apple_pay.png';
+  static const String checkoutCard = 'assets/images/checkout/card.png';
+  static const String checkoutCoupon = 'assets/images/checkout/coupon.png';
+  static const String checkoutLocation = 'assets/images/checkout/location.png';
+  static const String checkoutPerson = 'assets/images/checkout/person.png';
+  static const String checkoutPriority = 'assets/images/checkout/priority.png';
+  static const String checkoutScudel = 'assets/images/checkout/scudel.png';
+  static const String checkoutStander = 'assets/images/checkout/stander.png';
+  static const String checkoutTelephon = 'assets/images/checkout/telephon.png';
   static const String fontsBalooDaRegular = 'assets/fonts/BalooDa-Regular.ttf';
   static const String fontsHelvetica = 'assets/fonts/Helvetica.ttf';
   static const String fontsInter18ptBold = 'assets/fonts/Inter_18pt-Bold.ttf';

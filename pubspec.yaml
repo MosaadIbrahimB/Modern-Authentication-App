@@ -15,6 +15,7 @@ dependencies:
   freezed_annotation: ^3.0.0
   json_annotation: ^4.9.0
   badges: ^3.1.2
+  animated_text_kit: ^4.2.3
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +30,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/fruit/
+    - assets/images/checkout/
 
   fonts:
    - family: Prime

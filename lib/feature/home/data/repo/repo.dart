@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_color.dart';
+import '../../../cart/data/model/add_note_model.dart';
 import '../../presentation/widget/item_slider_Widget.dart';
 import '../model/carousel_slider_model.dart';
 import '../model/product_model.dart';
@@ -113,6 +114,57 @@ class Repo {
 
 
   ];
+
+
+
+static  final List<AddNoteModel> detailList = [
+    AddNoteModel(
+      pathImage: "assets/images/checkout/person.png",
+      title: "Kinglsey Ezechukwu",
+      widget: Icon(Icons.arrow_forward_ios, size: 22),
+    ),
+    AddNoteModel(
+      pathImage: "assets/images/checkout/telephon.png",
+      title: "+44665512120",
+      widget: Icon(Icons.arrow_forward_ios, size: 22),
+    ),
+  ];
+static  final List<AddNoteModel> addressList = [
+    AddNoteModel(
+      pathImage: "assets/images/checkout/location.png",
+      title: "Apartment 609 \n45 Soho Loop street birmingham",
+      widget: Icon(Icons.arrow_forward_ios, size: 22),
+    ),
+  ];
+static  final List<AddNoteModel> haveCouponList = [
+    AddNoteModel(
+      pathImage: "assets/images/checkout/coupon.png",
+      title: "Apply Coupon",
+      widget: Icon(Icons.arrow_forward_ios, size: 22),
+    ),
+  ];
+static  final List<AddNoteModel> deliveryList = [
+    AddNoteModel(
+      pathImage: "assets/images/checkout/priority.png",
+      title: "Priority  (10 -20 mins)",
+      widget: Icon(
+        Icons.radio_button_checked_sharp,
+        color: Colors.green,
+        size: 22,
+      ),
+    ),
+    AddNoteModel(
+      pathImage: "assets/images/checkout/stander.png",
+      title: "Standard  (30 -45 mins)",
+      widget: Icon(Icons.radio_button_off, size: 22),
+    ),
+    AddNoteModel(
+      pathImage: "assets/images/checkout/scudel.png",
+      title: "Schedule  (30 -45 mins)",
+      widget: Icon(Icons.arrow_forward_ios, size: 22),
+    ),
+  ];
+
 
 }
 
