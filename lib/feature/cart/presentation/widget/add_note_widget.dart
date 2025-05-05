@@ -42,6 +42,8 @@ class AddNoteWidget extends StatelessWidget {
             ],
           ),
           Container(
+            width: 20,
+            height: 20,
             // color: Colors.red,
             alignment: AlignmentDirectional.center,
             child: addNoteModel.widget,

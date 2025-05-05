@@ -3,6 +3,7 @@ class Assets {
   Assets._();
 
   static const String checkoutApplePay = 'assets/images/checkout/apple_pay.png';
+  static const String checkoutCard = 'assets/images/checkout/card.png';
   static const String checkoutCoupon = 'assets/images/checkout/coupon.png';
   static const String checkoutLocation = 'assets/images/checkout/location.png';
   static const String checkoutPerson = 'assets/images/checkout/person.png';
