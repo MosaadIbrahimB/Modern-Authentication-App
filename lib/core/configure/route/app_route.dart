@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:modern_authentication_app/feature/checkout/presentation/screen/check_out_screen.dart';
-import 'package:modern_authentication_app/feature/payment/presentation/screen/payment_screen.dart';
+import 'package:modern_authentication_app/feature/auth/screen/login_screen.dart';
+import 'package:modern_authentication_app/feature/auth/screen/sign_up_screen.dart';
+import 'package:modern_authentication_app/feature/splash/splash_screen.dart';
 
-import '../../../feature/cart/presentation/screen/cart_screen.dart';
-import '../../../feature/home/presentation/screen/home_screen.dart';
 
 class AppRoute{
 
-  static final String home='/';
-  static final String cart='/cart';
-  static final String checkout='/checkout';
-  static final String payment='/payment';
+   static const  String splashScreen='/';
+    static const String login='/login';
+    static const String signup='/signup';
+
 
   static Route onGenerateRoute(RouteSettings routSetting) {
 
 
     switch(routSetting.name){
-      case "/":
-        return MaterialPageRoute(builder: (context) => HomeScreen());
-      case "/cart":
-        return MaterialPageRoute(builder: (context) => CartScreen());
-      case "/checkout":
-        return MaterialPageRoute(builder: (context) => CheckOutScreen());
-      case "/payment":
-        return MaterialPageRoute(builder: (context) => PaymentScreen());
+      case AppRoute.splashScreen:
+        return MaterialPageRoute(builder: (context) => SplashScreen());
+      case AppRoute.login:
+        return MaterialPageRoute(builder: (context) => LoginScreen());
+      case AppRoute.signup:
+        return MaterialPageRoute(builder: (context) => SignUpScreen());
       default:
         return MaterialPageRoute(builder: (context) => _defaultScreen());
     }
